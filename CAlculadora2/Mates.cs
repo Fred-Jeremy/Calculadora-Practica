@@ -9,7 +9,7 @@ namespace Calculadora
     internal class Mates
     {
 
-        public Mates(List<char> operadores, double[] valores)
+        public Mates(List<char> operadores, double[] valores)   //Constructor por defecto
         {
             this.operadores = operadores;
             _valores = valores;
@@ -17,8 +17,9 @@ namespace Calculadora
 
         public double Resolver()
         {
-            short j = 0;
-            foreach (char i in operadores)
+            short j = 0;    //Variable short que sirve para recorrer las posiciones dentro de _valores
+
+            foreach (char i in operadores)  //Filtro para operar primero las multiplicaciones y divisiones
             {
                 if (i == '*' || i == '/') FormulaIf(i, j);
                 j++;
@@ -26,7 +27,7 @@ namespace Calculadora
 
             j = 0;
             char aux = '+';
-            foreach (char i in operadores)
+            foreach (char i in operadores)  //Filtro para operar solo las sumas y restas
             {
                 if (i == '+' || i == '-')
                 {
